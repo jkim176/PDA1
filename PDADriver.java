@@ -23,7 +23,6 @@ public class PDADriver {
                 System.out.println(userString + " is accepted.");
             } else {                                                          // userString length >= 2 /////////////////////
                 int halfway = userString.length() / 2;
-                pda.addSequence("Q0");
 
                 for (int i = 0; i < halfway; i++) {      // 0 to half
                     pda.push(userString.charAt(i));     // animate
@@ -60,6 +59,8 @@ public class PDADriver {
             }
             System.out.print("Sequence: ");
             pda.printSequence();
+            // do animation with sequence
+            ArrayList<String> sequence = pda.getSequence();
 
             System.out.println("To restart this program, enter any key.  Enter 0 to quit.");
             restartString = input.next();
